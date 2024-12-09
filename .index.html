@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Algoritmos Esenciales: Tu Puerta al Mundo de la Programación</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #2a9d8f;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        main {
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        section {
+            margin-bottom: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        li {
+            margin-bottom: 15px;
+        }
+        button {
+            background-color: #2a9d8f;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #21867a;
+        }
+        footer {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        input {
+            padding: 8px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Algoritmos Esenciales</h1>
+        <p>Tu Puerta al Mundo de la Programación</p>
+    </header>
+    <main>
+        <section>
+            <h2>Breve Descripción</h2>
+            <p>
+                Esta página reúne 10 algoritmos esenciales para cualquier programador principiante o intermedio. 
+                Desde simulaciones hasta herramientas prácticas, cada algoritmo muestra cómo resolver problemas comunes 
+                de forma eficiente. Un recurso diseñado para estudiantes y entusiastas de la programación.
+            </p>
+        </section>
+        <section>
+            <h2>Top 10 Algoritmos</h2>
+            <ul>
+                <li>
+                    <strong>Simulación de Demanda:</strong>
+                    <button onclick="simularDemanda()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Generador de Contraseñas Seguras:</strong>
+                    <button onclick="generarContrasena()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Juego de Adivinanza Numérica:</strong>
+                    <button onclick="juegoAdivinanza()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Simulador de Probabilidades:</strong>
+                    <button onclick="simularProbabilidades()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Sistema de Registro de Clientes:</strong>
+                    <button onclick="registrarClientes()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Calculadora Financiera:</strong>
+                    <button onclick="calculadoraFinanciera()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Conversor de Unidades:</strong>
+                    <button onclick="convertirUnidades()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Control de Inventarios:</strong>
+                    <button onclick="controlInventarios()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Calculadora de Edad:</strong>
+                    <button onclick="calcularEdad()">Ejecutar</button>
+                </li>
+                <li>
+                    <strong>Convertidor de Temperatura:</strong>
+                    <button onclick="convertirTemperatura()">Ejecutar</button>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <h2>Integrantes del Equipo 1</h2>
+            <ul>
+                <li>Aguilar Camacho Juan Carlos</li>
+                <li>Aguilar Martinez Antonio</li>
+                <li>Emiliano Aguileira Hernández</li>
+                <li>Alfaro Flores Juan Manuel</li>
+                <li>Ayala Morales Andreij Haziel</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 - Equipo 1. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        function simularDemanda() {
+            const demanda = prompt("Ingrese la demanda inicial:");
+            alert("Demanda simulada: " + (parseInt(demanda) + Math.floor(Math.random() * 100)));
+        }
+
+        function generarContrasena() {
+            const longitud = prompt("Ingrese la longitud de la contraseña:");
+            const caracteres = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+            let contrasena = "";
+            for (let i = 0; i < longitud; i++) {
+                contrasena += caracteres.charAt(Math.floor(Math.random() * caracteres.length));
+            }
+            alert("Contraseña generada: " + contrasena);
+        }
+
+        function juegoAdivinanza() {
+            const numero = Math.floor(Math.random() * 100) + 1;
+            let intento = 0;
+            while (intento !== numero) {
+                intento = parseInt(prompt("Adivina el número (entre 1 y 100):"));
+                if (intento > numero) alert("Es menor.");
+                else if (intento < numero) alert("Es mayor.");
+                else alert("¡Correcto! El número era " + numero);
+            }
+        }
+
+        function simularProbabilidades() {
+            const lanzamientos = prompt("Ingrese el número de lanzamientos de moneda:");
+            let cara = 0;
+            for (let i = 0; i < lanzamientos; i++) {
+                if (Math.random() < 0.5) cara++;
+            }
+            alert("Resultado: " + cara + " caras y " + (lanzamientos - cara) + " sellos.");
+        }
+
+        function registrarClientes() {
+            let cliente = prompt("Ingrese el nombre del cliente a registrar:");
+            alert("Cliente registrado: " + cliente);
+        }
+
+        function calculadoraFinanciera() {
+            const capital = prompt("Ingrese el capital inicial:");
+            const tasa = prompt("Ingrese la tasa de interés (en porcentaje):");
+            const tiempo = prompt("Ingrese el tiempo (en años):");
+            const interes = (capital * tasa * tiempo) / 100;
+            alert("El interés generado es: $" + interes);
+        }
+
+        function convertirUnidades() {
+            const metros = prompt("Ingrese la cantidad en metros:");
+            alert("Equivale a " + (metros * 100) + " centímetros y " + (metros * 3.281) + " pies.");
+        }
+
+        function controlInventarios() {
+            const entradas = prompt("Ingrese las entradas:");
+            const salidas = prompt("Ingrese las salidas:");
+            const inventarioFinal = entradas - salidas;
+            alert("Inventario final: " + inventarioFinal);
+        }
+
+        function calcularEdad() {
+            const anioNacimiento = prompt("Ingrese su año de nacimiento:");
+            const edad = new Date().getFullYear() - anioNacimiento;
+            alert("Su edad es: " + edad + " años.");
+        }
+
+        function convertirTemperatura() {
+            const celsius = prompt("Ingrese la temperatura en Celsius:");
+            const fahrenheit = (celsius * 9/5) + 32;
+            alert("Equivale a " + fahrenheit + "° Fahrenheit.");
+        }
+    </script>
+</body>
+</html>
